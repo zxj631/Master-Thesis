@@ -36,7 +36,7 @@ pip install streamlit pandas numpy matplotlib openpyxl seaborn joblib
 The data used in this project includes:
 
 Population, Age, and Gender Data: Provided by the United Nations, accessible at [UN World Population Prospects.](https://population.un.org/wpp/Download/Standard/MostUsed/)
-Educational Attainment Data: Provided by the World Bank, accessible at https://genderdata.worldbank.org/en/indicator/se-cuat-zs#idRelatedIndicators
+Educational Attainment Data: Provided by the World Bank, accessible at [ World Bank Gender Data Portal.](https://genderdata.worldbank.org/en/indicator/se-cuat-zs#idRelatedIndicators)
 These datasets are merged and cleaned to calculate weights for adjusting the sample data to real-world distributions.
 
 How to Use the Application
