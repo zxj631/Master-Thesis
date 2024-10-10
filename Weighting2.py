@@ -601,13 +601,12 @@ def convert_to_year_only(user_df, year_column):
     :param year_column: Column name representing the year in the user dataset
     :return: Converted user dataset (pandas DataFrame)
     """
-    # Use to_datetime to convert the year column to datetime type, replacing invalid data with NaT
-    user_df[year_column] = pd.to_datetime(user_df[year_column], errors='coerce')
-
-    # Extract the year part and replace the original date column
-    user_df[year_column] = user_df[year_column].dt.year
-
-    return user_df
+    if pd.api.types.is_integer_dtype(user_df[year_column]) or pd.api.types.is_float_dtype(user_df[year_column]):
+        return user_df
+    else:
+        user_df[year_column] = pd.to_datetime(user_df[year_column], errors='coerce')
+        user_df[year_column] = user_df[year_column].dt.year
+        return user_df
 
 
 def calculate_gender_ratio(user_df, country_column, country_name, gender_column, gender, male_value='Male',
